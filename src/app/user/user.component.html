@@ -1,0 +1,35 @@
+<div [formGroup]="profileForm" class="container">
+    <label>Name</label>
+    <input type="text" class="form-control"  formControlName="name" [(ngModel)] = "clearName">
+    <label>Age</label>
+    <input type="text" class="form-control"  formControlName="user_age" [(ngModel)] = "clearAge">
+    <label>Email</label>
+    <input type="text" class="form-control"  formControlName="user_email" [(ngModel)] = "clearEmail">
+    <label>Details</label>
+    <input type="text" class="form-control"  formControlName="user_details" [(ngModel)] = "clearDetails">
+    <button class="btn btn-success mt-2" (click)= "onSubmit()">Add List</button>
+</div>
+
+
+<div class="container user_list mt-5"  #pdfContent>
+        <button class="btn btn-primary mt-2" (click)= "onPdf()">Download as PDF</button>
+
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Age</th>
+        <th scope="col">Email</th>
+        <th scope="col">Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let user of users">
+        <td>{{user.name}}</td>
+        <td>{{user.user_age}}</td>
+        <td>{{user.user_email}}</td>
+        <td>{{user.user_details}} <i class="fas fa-trash-alt trash" (click)="deleteUser(user.id)"></i></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
