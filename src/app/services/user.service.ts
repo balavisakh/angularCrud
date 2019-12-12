@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { from } from 'rxjs';
 import { Observable } from 'rxjs';
 import { User } from '../models/user';
+import { Login } from './../models/login';
+
 
 @Injectable({
   providedIn: 'root'
@@ -24,5 +26,9 @@ export class UserService {
 
   deleteUser(userId): Observable<User[]>{
     return this.http.post<User[]>(this._baseURI + 'delete-user',userId);
+  }
+
+  userLogin(data):Observable<Login[]>{
+    return this.http.post<Login[]>(this._baseURI + 'login',data);
   }
 }
