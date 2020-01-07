@@ -15,6 +15,7 @@ export class UserService {
   constructor(public http: HttpClient) {
     this._baseURI = "http://localhost/laravelCrud/public/";
    }
+
    getUsers(): Observable<User[]>{
 
     return this.http.post<User[]>(this._baseURI+'user-profile', {});
@@ -22,7 +23,7 @@ export class UserService {
 
   addUser(profileForm): Observable<User[]>{
     return this.http.post<User[]>(this._baseURI + 'create-user',profileForm);
-  }
+    };
 
   deleteUser(userId): Observable<User[]>{
     return this.http.post<User[]>(this._baseURI + 'delete-user',userId);
@@ -30,5 +31,12 @@ export class UserService {
 
   userLogin(data):Observable<Login[]>{
     return this.http.post<Login[]>(this._baseURI + 'login',data);
+  }
+
+  updateUser(data):Observable<User[]>{
+    return this.http.post<User[]>(this._baseURI + 'update-user',data);
+  }
+  getUserById(data):Observable<User[]>{
+    return this.http.post<User[]>(this._baseURI + 'get-user_by_id',data);
   }
 }

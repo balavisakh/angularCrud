@@ -1,17 +1,21 @@
-<div [formGroup]="profileForm" class="container">
+<div class="container">
+  <div class="row">
+<div [formGroup]="profileForm" class="col-lg-6 mt-5">
     <label>Name</label>
-    <input type="text" class="form-control"  formControlName="name" [(ngModel)] = "clearName">
+    <input type="text" class="form-control" formControlName="name" [(ngModel)] = "Name">
     <label>Age</label>
-    <input type="text" class="form-control"  formControlName="user_age" [(ngModel)] = "clearAge">
+    <input type="text" class="form-control"  formControlName="user_age" [(ngModel)] = "Age">
     <label>Email</label>
-    <input type="text" class="form-control"  formControlName="user_email" [(ngModel)] = "clearEmail">
+    <input type="text" class="form-control"  formControlName="user_email" [(ngModel)] = "Email">
     <label>Details</label>
-    <input type="text" class="form-control"  formControlName="user_details" [(ngModel)] = "clearDetails">
+    <input type="text" class="form-control"  formControlName="user_details" [(ngModel)] = "Details">
+    <input style="display: none;" type="text" value="users.id" formControlName = id>
     <button class="btn btn-success mt-2" (click)= "onSubmit()">Add List</button>
+    <button class="btn btn-info mt-2 ml-2"  (click) = "onUpdate()" >Update List</button>
 </div>
 
 
-<div class="container user_list mt-5"  #pdfContent>
+<div class="col-lg-6 user_list mt-5"  #pdfContent>
         <button class="btn btn-primary mt-2" (click)= "onPdf()">Download as PDF</button>
 
 <table class="table table-bordered">
@@ -30,8 +34,10 @@
         <td>{{user.user_age}}</td>
         <td>{{user.user_email}}</td>
         <td>{{user.user_details}}</td>
-        <td class="trash"><i class="far fa-edit trash" data-toggle="tooltip" data-placement="top" title="Tooltip on top"></i> <i class="fas fa-trash-alt trash ml-2" (click)="deleteUser(user.id)"></i></td>
+        <td class="trash"><i (click) = getData(user.id) class="far fa-edit trash" data-toggle="tooltip" data-placement="top" title="Tooltip on top"></i> <i class="fas fa-trash-alt trash ml-2" (click)="deleteUser(user.id)"></i></td>
       </tr>
     </tbody>
   </table>
+  </div>
+  </div>
   </div>

@@ -14,10 +14,13 @@
         </div>
         <div class="group">
           <label for="password">Password:</label>
-          <input id="password" type="password" name="password" formControlName = "user_password">
+          <input id="password" type="{{showPassword ? 'text' : 'password'}}" name="password" formControlName = "user_password" >
+          <i class="fas fa-eye" (click)= "showPassword = true" *ngIf = "!showPassword" ></i>
+          <i class="fas fa-eye-slash" (click) = "showPassword = false" *ngIf = "showPassword"></i>
         </div>
         <a href="" class="forget-link">Forgot password?</a>
         <input type="submit" value="Login" id="submit" (click)= "login()" [disabled]="!loginForm.valid">
       </form>
     </div>
   </div>
+

@@ -4,7 +4,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { UserComponent } from './user/user.component';
 
 
-const routes: Routes = [{path:'',component:LoginComponent},{path:'user',component:UserComponent}];
+const routes: Routes = [
+  {path:'',component:LoginComponent},
+  {path:'user',component:UserComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
