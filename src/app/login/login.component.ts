@@ -10,7 +10,7 @@ import { UserService } from '../services/user.service';
 })
 export class LoginComponent implements OnInit {
   data:any;
-  spinner = false;
+  spinner = true;
 
   loginForm = this.fb.group({
     user_email: ['',Validators.required],
@@ -23,6 +23,7 @@ export class LoginComponent implements OnInit {
   }
   login(){
     if(this.loginForm.valid){
+      this.spinner = false;
     this.userApi.userLogin(this.loginForm.value)
     .subscribe(response=>{
       this.spinner = true;

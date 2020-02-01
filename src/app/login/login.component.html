@@ -20,7 +20,12 @@
         </div>
         <a href="" class="forget-link">Forgot password?</a>
         <input type="submit" value="Login" id="submit" (click)= "login()" [disabled]="!loginForm.valid">
+          <!-- spinner -->
+        <div style="margin-top: 20%;" class="text-center spinner" [hidden] = "spinner  == true">
+          <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+        </div>
       </form>
     </div>
   </div>
-

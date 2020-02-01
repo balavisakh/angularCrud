@@ -4,6 +4,7 @@ import { from } from 'rxjs';
 import { Observable } from 'rxjs';
 import { User } from '../models/user';
 import { Login } from './../models/login';
+import { Students } from '../models/students';
 
 
 @Injectable({
@@ -38,5 +39,9 @@ export class UserService {
   }
   getUserById(data):Observable<User[]>{
     return this.http.post<User[]>(this._baseURI + 'get-user_by_id',data);
+  }
+  //students
+  getStudentsNames(){
+    return this.http.post<Students[]>(this._baseURI + 'students-names',{});
   }
 }

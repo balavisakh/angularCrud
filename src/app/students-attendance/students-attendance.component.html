@@ -1,0 +1,25 @@
+<app-navbar></app-navbar>
+<div class="students_reg">
+    <div class="container">
+        <div class="students_list mt-5">
+            <h1 class="d-flex justify-content-center">Students Attendence - STD I</h1>
+            <ul class="list-group w-50 mx-auto mt-5">
+                <li class="list-group-item" for="inlineCheckbox1">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" (change)="checkAll($event)" class="custom-control-input" id="customCheck1">
+                        <label class="custom-control-label" for="customCheck1">Check All</label>
+                    </div>
+                </li>
+                <li class="list-group-item" *ngFor = "let studentsName of studentsNames">
+                    <div class="custom-control custom-checkbox">
+                        <input #check1 type="checkbox" class="custom-control-input" id="customCheck2">
+                        <label class="custom-control-label" for="customCheck2">{{studentName.id}}</label>
+                    </div>
+                </li>
+                <li class="list-group-item text-center">
+                    <button class="btn btn-outline-success btn-block">Submit</button>
+                </li>
+              </ul>
+        </div>
+    </div>
+</div>
