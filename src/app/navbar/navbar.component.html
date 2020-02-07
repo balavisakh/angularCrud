@@ -22,9 +22,27 @@
       <li class="nav-item active">
         <a class="nav-link" routerLink='/user' routerLinkActive="active-link"  >User Page<span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink='/students-attendence' routerLinkActive="active-link" >Student Attendences</a>
+      <li class="nav-item nav_dropdown_li">
+        <a class="nav-link nav_link"  routerLinkActive="active-link">Student Attendences <i class="fas fa-chevron-down nav_student_dropdown position-relative"></i>
+          <ul class="dropdown_menu position-absolute h-15 bg-light list-unstyled text-center p-2">
+            <li class="nav_dropdown_link p-2" routerLink='/students-attendence' routerLinkActive="active-link">standard I</li>
+            <li class="nav_dropdown_link p-2 mt-2">standard II</li>
+            <li class="nav_dropdown_link p-2 mt-2">standard III</li>
+            <li class="nav_dropdown_link p-2 mt-2">standard IV</li>
+            <li class="nav_dropdown_link p-2 mt-2">standard V</li>
+            <li class="nav_dropdown_link p-2 mt-2">standard VI</li>
+            <li class="nav_dropdown_link p-2 mt-2">standard VII</li>
+            <li class="nav_dropdown_link p-2 mt-2">standard VIII</li>
+            <li class="nav_dropdown_link p-2 mt-2">standard IX</li>
+            <li class="nav_dropdown_link p-2 mt-2">standard X</li>
+            <li class="nav_dropdown_link p-2 mt-2">standard XI</li>
+            <li class="nav_dropdown_link p-2 mt-2" routerLinkActive="active-link">standard XII</li>
+          </ul>
+        </a>
+        
       </li>
+        
+      
       <li class="nav-item">
         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
       </li>
@@ -35,3 +53,4 @@
     </form>
   </div>
 </nav>
+

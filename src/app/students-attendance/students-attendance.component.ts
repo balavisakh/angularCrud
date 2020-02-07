@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild, ViewChildren, QueryList } from '@angular/core';
 import { UserService } from './../services/user.service';
 
 @Component({
@@ -7,8 +7,9 @@ import { UserService } from './../services/user.service';
   styleUrls: ['./students-attendance.component.css']
 })
 export class StudentsAttendanceComponent implements OnInit {
-  @ViewChild('check1',{static:true}) check: ElementRef
+  @ViewChildren('check1') check: QueryList<any>
   studentsNames = [];
+  check1;
   
 
   constructor(private userApi:UserService) { 
@@ -17,13 +18,14 @@ export class StudentsAttendanceComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  checkAll(event){
+  checkAll(event){ 
+    console.log(event);
    if(event.target.checked){
-     this.check.nativeElement.checked = true;
+  this.check.forEach(eve=>{(eve.nativeElement.checked = true)});
+  
    }
    else{
-     this.check.nativeElement.checked = false;
+     this.check.forEach(eve=>{(eve.nativeElement.checked = false)});
    }
   }
 
@@ -33,6 +35,12 @@ export class StudentsAttendanceComponent implements OnInit {
       this.studentsNames = data;
       console.log(this.studentsNames);
     })
+  }
+
+  checkboxChange(student_name){
+    console.log(this.check1);
+    let studentName = student_name;
+    console.log(studentName);
   }
 
 }

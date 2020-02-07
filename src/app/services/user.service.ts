@@ -5,6 +5,8 @@ import { Observable } from 'rxjs';
 import { User } from '../models/user';
 import { Login } from './../models/login';
 import { Students } from '../models/students';
+import { environment } from './../../environments/environment';
+
 
 
 @Injectable({
@@ -14,11 +16,10 @@ export class UserService {
   _baseURI: string;
 
   constructor(public http: HttpClient) {
-    this._baseURI = "http://localhost/laravelCrud/public/";
+    this._baseURI = environment.api_url;
    }
 
    getUsers(): Observable<User[]>{
-
     return this.http.post<User[]>(this._baseURI+'user-profile', {});
   }
 

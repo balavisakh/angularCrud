@@ -78,3 +78,11 @@
     cursor:pointer;
     box-shadow:0 10px 15px -5px rgba(0,0,0,0.4);
   }
+  .login_div{
+    border-radius: 20px;
+  }
+  .eye_icon{
+    position: absolute;
+    margin-left: 220px;
+    margin-top: 15px;
+  }

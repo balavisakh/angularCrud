@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/user']);
         console.log("success");
       }else if(this.data == "failed"){
-        this.router.navigate(['/']);
+        alert("Your email or password is incorrect");
         console.log(['failure']);
       }
       console.log(this.data);

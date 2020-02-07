@@ -7,3 +7,26 @@
 .navbar{
     box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
 }
+.dropdown_menu{
+    z-index: 1;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    background-color: #000!important;
+    opacity: 0.5;
+    width: 17%;
+    display: none;
+    margin-top: 5px;
+}
+.nav_link:hover .nav_student_dropdown{
+    transform: rotate(180deg);
+    transition: ease-in-out 0.3s;
+    cursor: pointer;
+
+}
+.nav_dropdown_li:hover .dropdown_menu{
+    display: block;
+    cursor: pointer;
+}
+.dropdown_menu .nav_dropdown_link:hover{
+    background-color: #fff;
+    color: #000 !important;
+}

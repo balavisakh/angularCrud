@@ -1,5 +1,5 @@
 <div class="wrapper" >
-    <div class="container">
+    <div class="container login_div">
       <a href="" class="fb-login social-login">
         Login with Facebook
       </a>
@@ -14,18 +14,24 @@
         </div>
         <div class="group">
           <label for="password">Password:</label>
+          <div class="d-flex">
           <input id="password" type="{{showPassword ? 'text' : 'password'}}" name="password" formControlName = "user_password" >
-          <i class="fas fa-eye" (click)= "showPassword = true" *ngIf = "!showPassword" ></i>
-          <i class="fas fa-eye-slash" (click) = "showPassword = false" *ngIf = "showPassword"></i>
+          <i class="fas fa-eye eye_icon" (click)= "showPassword = true" *ngIf = "!showPassword" ></i>
+          <i class="fas fa-eye-slash eye_icon" (click) = "showPassword = false" *ngIf = "showPassword"></i>
+        </div>
         </div>
         <a href="" class="forget-link">Forgot password?</a>
-        <input type="submit" value="Login" id="submit" (click)= "login()" [disabled]="!loginForm.valid">
+        <button (click)= "login()" [disabled]="!loginForm.valid" class="btn btn-block p-2 btn-success" type="button" disabled>
+          <span [hidden] = "spinner  == true" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+          Submit
+        </button>
+        <!-- <input type="submit" value="Login" id="submit" > -->
           <!-- spinner -->
-        <div style="margin-top: 20%;" class="text-center spinner" [hidden] = "spinner  == true">
+        <!-- <div style="margin-top: 20%;" class="text-center spinner" [hidden] = "spinner  == true">
           <div class="spinner-border" role="status">
             <span class="sr-only">Loading...</span>
           </div>
-        </div>
+        </div> -->
       </form>
     </div>
   </div>
